@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>練習問題04-04</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-5">
+        <div class="card">
+          <div class="card-header">メニューを選択してください</div>
+          <div class="card-body">
+            <form action="./action.php" method="post">
+              <ul class="list-unstyled ml-3">
+                <li>
+                  <input type="checkbox" name="menus[]" value="Aランチ" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">Aランチ</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="Bランチ" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">Bランチ</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="Cランチ" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">Cランチ</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="唐揚げ定食" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">唐揚げ定食</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="オムライス" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">オムライス</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="ごはん小" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">ごはん小</label>
+                <li>
+                  <input type="checkbox" name="menus[]" value="とんかつ定食" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">とんかつ定食</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="カレーライス" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">カレーライス</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="ビール" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">ビール</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="エビフライ定食" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">エビフライ定食</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="ごはん大" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">ごはん大</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="menus[]" value="烏龍茶" class="form-check-input" id="menu1">
+                  <label class="form-check-label" for="menu1">烏龍茶</label>
+                </li>
+                <button type="submit" class="btn btn-primary">注文</button>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

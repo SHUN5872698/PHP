@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>練習問題05-01</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-4">
+        <div class="card">
+          <div class="card-header">数字を三つ選択してください</div>
+          <div class="card-body">
+            <form action="./action.php" method="post">
+              <label for="num1">一つ目</label>
+              <input type="text" class="form-control" name="num1">
+              <label for="num2">二つ目</label>
+              <input type="text" class="form-control" name="num2">
+              <label for="num1">三つ目</label>
+              <input type="text" class="form-control" name="num3">
+              <input type="submit" value="送信" class="btn btn-primary mt-2">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
