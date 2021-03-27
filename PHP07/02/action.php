@@ -7,7 +7,12 @@ class Menu
   private $menu;
   private $price;
 
-  //コンストラクトの呼び出し
+  /**
+   * //コンストラクトの呼び出し *
+   * @param string $category メニューのカテゴリー
+   * @param string $menu メニュー
+   * @param integer $price 値段
+   */
   public function __construct($category, $menu, $price)
   {
     $this->category = $category;
@@ -15,7 +20,10 @@ class Menu
     $this->price = $price;
   }
 
-  //変数を連想配列に格納してreturnする
+  /**
+   * クラス変数の内容を連想配列で返却 *
+   * @return array 連想配列
+   */
   public function getData()
   {
     $datas = [
@@ -27,7 +35,7 @@ class Menu
   }
 }
 
-//POSTされた内容からクラスのインスタンスを作成
+//POSTされた内容から連想配列を作成
 $datas = new Menu($_POST['category'], $_POST['menu'], $_POST['price']);
 $datas = $datas->getData();
 
@@ -40,7 +48,7 @@ $datas = $datas->getData();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>練習問題07-01</title>
+  <title>練習問題07-02</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
