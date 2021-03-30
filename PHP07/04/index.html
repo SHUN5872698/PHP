@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>練習問題07-04</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <form action="./action.php" method="post">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5 mx-1">
+          <div class="ramen">
+            <div class="card">
+              <div class="card-header">ラーメンのオーダー</div>
+              <div class="card-body">
+                <div class="category">
+                  <label for="category">メニューのカテゴリー</label>
+                  <input type="text" name="カテゴリー[]" id="category" class="form-control" value="ラーメン" readonly>
+                </div>
+                <div class="menu">
+                  <label for="menu">メニュー</label>
+                  <input type="text" name="メニュー[]" id="menu" class="form-control">
+                </div>
+                <div class="noodleHardness">
+                  <label for="noodleHardness">麺の固さ</label>
+                  <input type="text" name="固さ" id="noodleHardness" class="form-control">
+                </div>
+                <div class="price">
+                  <label for="price">値段</label>
+                  <input type="text" name="値段[]" id="price" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 mx-1">
+          <div class="drink">
+            <div class="card">
+              <div class="card-header">ドリンクのオーダー</div>
+              <div class="card-body">
+                <div class="category">
+                  <label for="category">メニューのカテゴリー</label>
+                  <input type="text" name="カテゴリー[]" id="category" class="form-control" value="ドリンク" readonly>
+                </div>
+                <div class="menu">
+                  <label for="menu">メニュー</label>
+                  <input type="text" name="メニュー[]" id="menu" class="form-control">
+                </div>
+                <div class="size">
+                  <label for="size">ジョッキの大きさ</label>
+                  <input type="text" name="ジョッキの大きさ" id="size" class="form-control">
+                </div>
+                <div class="price">
+                  <label for="price">値段</label>
+                  <input type="text" name="値段[]" id="price" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+        <input type="submit" value="送信" class="btn btn-primary mt-2 ml-3">
+      </div>
+    </form>
+  </div>
+
+  </div>
+  </div>
+</body>
+
+</html>
