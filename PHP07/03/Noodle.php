@@ -28,10 +28,10 @@ class Noodle extends Menu
   public function getData()
   {
     $datas = [
-      'category' => $this->category,
-      'menu' => $this->menu,
-      'price' => $this->price,
-      'noodleHardness' => $this->noodleHardness,
+      'カテゴリー' => $this->category,
+      'メニュー' => $this->menu,
+      '値段' => $this->price,
+      '固さ' => $this->noodleHardness,
     ];
     return $datas;
   }

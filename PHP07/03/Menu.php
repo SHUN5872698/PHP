@@ -7,6 +7,7 @@ class Menu
   protected $menu;
   protected $price;
 
+
   /**
    * //コンストラクトの呼び出し *
    * @param string $category メニューのカテゴリー
@@ -28,9 +29,9 @@ class Menu
   public function getData()
   {
     $datas = [
-      'category' => $this->category,
-      'menu' => $this->menu,
-      'price' => $this->price,
+      'カテゴリー' => $this->category,
+      'メニュー' => $this->menu,
+      '値段' => $this->price,
     ];
     return $datas;
   }
