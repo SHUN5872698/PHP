@@ -4,7 +4,7 @@ require_once('./Menu.php');
 require_once('./Noodle.php');
 
 //クラスのインスタンスを作成
-$datas = new Noodle($_POST['category'], $_POST['menu'], $_POST['price'], $_POST['noodleHardness']);
+$datas = new Noodle($_POST['カテゴリー'], $_POST['メニュー'], $_POST['値段'], $_POST['固さ']);
 //インスタンスから連想配列を作成
 $datas = $datas->getData();
 ?>
