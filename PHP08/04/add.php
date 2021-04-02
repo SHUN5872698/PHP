@@ -2,6 +2,7 @@
 
 //データベースに接続
 $dsn = 'mysql:dbname=php_work2;host=localhost;charset=utf8';
+
 // PDOクラスのインスタンスを作る
 // 引数は、上記のDSN、データベースのユーザー名、パスワード
 $dbh = new PDO($dsn, 'root', 'root');
