@@ -4,39 +4,33 @@ require_once('/Applications/MAMP/vendor/autoload.php');
 //ライブラリを使用
 use Carbon\Carbon;
 
-try {
+// 今日の日付のCarbonクラスのインスタンスを生成。
+$now = Carbon::now('Asia/Tokyo');
+//現在時刻をフォーマット
+$now = $now->format('Y-m-d');
 
-  // 今日の日付のCarbonクラスのインスタンスを生成。
-  $now = Carbon::now('Asia/Tokyo');
-  //現在時刻をフォーマット
-  $now = $now->format('Y-m-d');
+// データベースに接続
+$dsn = 'mysql:dbname=php_work2;host=localhost;charset=utf8';
+// PDOクラスのインスタンスを作る
+// 引数は、上記のDSN、データベースのユーザー名、パスワード
+$dbh = new PDO($dsn, 'root', 'root');
 
-  // データベースに接続
-  $dsn = 'mysql:dbname=php_work2;host=localhost;charset=utf8';
-  // PDOクラスのインスタンスを作る
-  // 引数は、上記のDSN、データベースのユーザー名、パスワード
-  $dbh = new PDO($dsn, 'root', 'root');
+// エラーが起きたときのモードを指定する
+// 「PDO::ERRMODE_EXCEPTION」を指定すると、エラー発生時に例外がスローされる
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  // エラーが起きたときのモードを指定する
-  // 「PDO::ERRMODE_EXCEPTION」を指定すると、エラー発生時に例外がスローされる
-  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// レコードを全件取得する（期限日の古いものから並び替える）
+$sql = 'select * from todo_items order by expiration_date';
 
-  // レコードを全件取得する（期限日の古いものから並び替える）
-  $sql = 'select * from todo_items order by expiration_date';
+// SQL文を実行する準備
+$stmt = $dbh->prepare($sql);
 
-  // SQL文を実行する準備
-  $stmt = $dbh->prepare($sql);
+// SQLを実行する
+$stmt->execute();
 
-  // SQLを実行する
-  $stmt->execute();
+// 取得したレコードを連想配列として変数に代入する
+$lists = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  // 取得したレコードを連想配列として変数に代入する
-  $lists = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (Exception $e) {
-  var_dump($e);
-  echo $e->getMessage();
-  exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="jp">
@@ -91,24 +85,6 @@ try {
                   <tr>
                     <td><?= $list['expiration_date'] ?></td>
                     <td><?= $list['todo_item'] ?></td>
-                    <td>
-                      <form action="./action.php" method="POST" class="form-inline">
-                        <input type="hidden" name="id" value="<?= $list['id'] ?>">
-                        <div class="form-check form-check-inline mb-3 mr-1">
-                          <input type="radio" value="0" name="is_completed" id="is_complete1" class="form-check-input">
-                          <label for="complete1" class="form-check-label">未完了</label>
-                        </div>
-                        <div class="form-check form-check-inline mb-3 mr-1">
-                          <input type="radio" value="1" name="is_completed" id="is_complete2" class="form-check-input">
-                          <label for="complete2" class="form-check-label">完了</label>
-                        </div>
-                        <div class="form-check form-check-inline mb-3 mr-1">
-                          <input type="checkbox" value="1" name="delete" id="delete" class="form-check-input">
-                          <label for="delete" class="form-check-label">削除</label>
-                        </div>
-                        <input type="submit" value="実行" class="btn btn-primary mb-3">
-                      </form>
-                    </td>
                   </tr>
                 <?php } ?>
               </table>
