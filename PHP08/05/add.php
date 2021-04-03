@@ -7,7 +7,7 @@ $dsn = 'mysql:dbname=php_work2;host=localhost;charset=utf8';
 // 引数は、上記のDSN、データベースのユーザー名、パスワード
 $dbh = new PDO($dsn, 'root', 'root');
 
-//データベースに登録日とタスク名をインサート
+//データベースに登録日とタスク名をインサートするsqlの発行
 $sql = "INSERT INTO todo_items(expiration_date, todo_item)VALUES (:expiration_date, :todo_item)";
 
 // SQL文を実行する準備
