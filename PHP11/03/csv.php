@@ -35,10 +35,10 @@ $fp = fopen('./csv/todo.csv', 'w');
 $b = true;
 
 // 文字列をSJISに変換して、ファイルに書き込む
-foreach ($lists as $val) {
-  foreach ($val as $k => $v) {
-    if ($k == 'todo_item') {
-      $val[$k] = mb_convert_encoding($v, 'SJIS', 'UTF-8');
+foreach ($lists as $list) {
+  foreach ($list as $key => $v) {
+    if ($key == 'todo_item') {
+      $list[$k] = mb_convert_encoding($v, 'SJIS', 'UTF-8');
     }
   }
   // 書き込みに失敗した場合$bの中身をfalseに上書きする
