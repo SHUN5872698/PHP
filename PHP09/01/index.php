@@ -65,8 +65,7 @@ try {
 
 <body>
   <div class="container">
-    <div class="row my-3">
-      <div class="col-md-2"></div>
+    <div class="row justify-content-md-center mt-3">
       <div class="col-md-8">
         <div class="card">
           <div class="card-header">TODOリスト</div>
@@ -118,7 +117,6 @@ try {
           </div>
         </div>
       </div>
-      <div class="col-md-2"></div>
     </div>
   </div>
 </body>
