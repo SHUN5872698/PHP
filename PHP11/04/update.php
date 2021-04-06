@@ -16,6 +16,9 @@ if (!isset($_FILES['csv_file']) || $_FILES['csv_file']['error'] > 0) {
   exit;
 }
 
+// セッションのエラーメッセージを破棄
+unset($_SESSION['err']['msg']);
+
 // アップロードされたCSVファイルを開く
 $fp = fopen($_FILES['csv_file']['tmp_name'], 'r');
 
