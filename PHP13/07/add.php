@@ -8,7 +8,6 @@ session_regenerate_id();
 require_once('./class/db/Base.php');
 require_once('./class/db/TodoItems.php');
 
-unset($_SESSION['user']);
 // ログインしていないときは、login.phpへリダイレクト
 if (empty($_SESSION['user'])) {
   header('Location: ./login.php');
