@@ -77,7 +77,7 @@ class TodoItems extends Base
 
     // SQL文の該当箇所に、変数の値を割り当て（バインド）
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->bindValue(':isCompleted', (int) $isCompleted, PDO::PARAM_INT);
+    $stmt->bindValue(':is_completed', (int) $isCompleted, PDO::PARAM_INT);
 
     // SQLを実行する
     $stmt->execute();

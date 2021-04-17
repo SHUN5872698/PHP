@@ -77,7 +77,7 @@ class TodoItems extends Base
 
     // SQL文の該当箇所に、変数の値を割り当て（バインド）
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->bindValue(':isCompleted', (int) $isCompleted, PDO::PARAM_INT);
+    $stmt->bindValue(':is_completed', (int) $isCompleted, PDO::PARAM_INT);
 
     // SQLを実行する
     $stmt->execute();
@@ -129,27 +129,5 @@ class TodoItems extends Base
 
     // SQLを実行する
     $stmt->execute();
-  }
-
-  /**
-   * メールアドレスの重複チェック
-   *
-   * @param string $email
-   * @return array
-   */
-  private function findUserByEmail(string $email): array
-  {
-    $sql = 'select * from users where email=:email';
-    // $sql = "select * from users where email='$email'";
-    $stmt = $this->dbh->prepare($sql);
-    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-    $stmt->execute();
-    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    // falseが返却されたときは、空の配列を返却ß
-    if (empty($rec)) {
-      return [];
-    }
-    return $rec;
   }
 }
