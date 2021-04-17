@@ -40,18 +40,17 @@ class TodoItems extends Base
    * @param integer $isCompleted 完了、未完了
    * @return void
    */
-  public function update(int $id, String $expiration_date, String $todoItem, int $isCompleted)
+  public function update(int $id, string $expirationDate, string $todoItem, int $isCompleted)
   {
-
     // レコードをアップデートするSQL文
     $sql = "UPDATE todo_items set expiration_date=:expiration_date, todo_item=:todo_item, is_completed=:is_completed where id=:id";
+
 
     // SQL文を実行する準備
     $stmt = $this->dbh->prepare($sql);
 
-    // SQL文の該当箇所に、変数の値を割り当て（バインド）
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->bindValue(':expiration_date', $expiration_date, PDO::PARAM_STR);
+    $stmt->bindValue(':expiration_date', $expirationDate, PDO::PARAM_STR);
     $stmt->bindValue(':todo_item', $todoItem, PDO::PARAM_STR);
     $stmt->bindValue(':is_completed', $isCompleted, PDO::PARAM_INT);
 
@@ -77,7 +76,7 @@ class TodoItems extends Base
 
     // SQL文の該当箇所に、変数の値を割り当て（バインド）
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->bindValue(':isCompleted', (int) $isCompleted, PDO::PARAM_INT);
+    $stmt->bindValue(':is_completed', (int) $isCompleted, PDO::PARAM_INT);
 
     // SQLを実行する
     $stmt->execute();
