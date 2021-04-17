@@ -1,4 +1,8 @@
 <?php
+
+// データベース接続のためのファイルを読み込む
+require_once('./class/db/Base.php');
+require_once('./class/db/TodoItems.php');
 // セッションをスタートする。
 session_start();
 // セッションIDをリクエストのたびに更新する。
