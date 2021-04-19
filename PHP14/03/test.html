@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>練習問題14-03</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <style>
+    #expiration_date {
+      width: 12rem;
+    }
+
+    #todo_item {
+      width: 25rem;
+    }
+
+    .complete {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">TODOリスト</div>
+          <div class="card-body">
+            <form action="http://localhost/PHP/PHP14/03/add.php" method="post">
+              <div class="form-group mb-3 mr-1">
+                <label for="expiration_date" class="sr-only">期限日</label>
+                <input type="date" name="expiration_date" value="2021-04-19" id="expiration_date" class="form-control">
+              </div>
+              <div class="form-group mb-3 mr-1">
+                <label for="todo_item" class="sr-only">TODO項目</label>
+                <input type="text" name="todo_item" placeholder="TODO項目を入力してください" id="todo_item" class="form-control">
+              </div>
+              <input type="submit" value="追加" class="btn btn-primary mb-3">
+            </form>
+                          <table class="table table-borderd">
+                <tr>
+                  <th>期限日</th>
+                  <th>TODO項目</th>
+                  <th></th>
+                </tr>
+                                  <tr>
+                    <td>2021-04-01</td>
+                    <td>テストの項目01</td>
+                  </tr>
+                                  <tr>
+                    <td>2021-04-01</td>
+                    <td>テストの項目02</td>
+                  </tr>
+                                  <tr>
+                    <td>2021-04-03</td>
+                    <td>テストの項目03</td>
+                  </tr>
+                                  <tr>
+                    <td>2021-04-04</td>
+                    <td>テストの項目04</td>
+                  </tr>
+                                  <tr>
+                    <td>2021-04-17</td>
+                    <td>テストの項目05</td>
+                  </tr>
+                              </table>
+                      </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</body>
+
+</html>
