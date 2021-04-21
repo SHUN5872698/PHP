@@ -17,7 +17,7 @@ try {
 
   // todo_itemテーブルクラスのインスタンスを生成する
   $db = new TodoItems();
-  // レコードを全件取得する（期限日の古いものから並び替える）
+  // インサートを実行
   $db->insert($_POST['expiration_date'], $_POST['todo_item']);
   // 処理が完了したらトップページ（index.php）へリダイレクト
   header('Location: ./');
