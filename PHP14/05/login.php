@@ -26,9 +26,9 @@ require_once('./class/util/SaftyUtil.php');
           <div class="card-header">ログイン</div>
           <div class="card-body">
 
-            <?php if (isset($_SESSION['err_msg'])) : ?>
+            <?php if (isset($_SESSION['msg']['err'])) : ?>
               <div class="alert alert-danger" role="alert">
-                <?= $_SESSION['err_msg'] ?>
+                <?= $_SESSION['msg']['err']  ?>
               </div>
             <?php endif ?>
 

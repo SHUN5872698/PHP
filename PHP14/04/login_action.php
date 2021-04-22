@@ -42,7 +42,7 @@ try {
   $_SESSION['user'] = $user;
 
   // エラーメッセージを削除して、index.phpにリダイレクト
-  unset($_SESSION['err_msg']);
+  unset($_SESSION['msg']['err']);
   header('Location: ./');
   exit;
 } catch (Exception $e) {
