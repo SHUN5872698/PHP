@@ -7,7 +7,7 @@ session_regenerate_id();
 // データベース接続と安全対策のためのファイルを読み込む
 require_once('./class/config/Config.php');
 require_once('./class/db/Base.php');
-require_once('./class/db/TodoItems.php');
+require_once('./class/db/Users.php');
 require_once('./class/util/SaftyUtil.php');
 
 // ワンタイムトークンのチェック
